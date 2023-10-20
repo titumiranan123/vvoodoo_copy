@@ -402,6 +402,11 @@ iframe {
     display: none;
 }
 
+.instagram_bar {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     body {
