@@ -21,7 +21,7 @@
             <ul class="menu">
                 <li class="menu-item"><a href="#">Home</a></li>
                 <li class="menu-item dropdown" id="allProducts">
-                    <a href="#">All Products</a>
+                    <a href="#">All Products <i class="fa-solid fa-angle-down"></i></a>
                     <div class="dropdown-content">
                         <ul class="categories">
                             <li><a href="#">WALLET AND CART HOLDER</a></li>
@@ -35,7 +35,18 @@
                 </li>
                 <li class="menu-item"><a href="#">Blog</a></li>
                 <li class="menu-item"><a href="#">About</a></li>
-                <li class="menu-item"><a href="#">Account</a></li>
+                <li class="menu-item dropdown" id="account">
+                    <a href="#">Account <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="account-contents">
+                        <ul class="categories">
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Whitelist</a></li>
+                            <li><a href="#">Cart
+                                </a></li>
+                            <li>
+                        </ul>
+                    </div>
+                </li>
 
             </ul>
 
@@ -43,7 +54,9 @@
                 <ul>
 
                     <li class="search"><i class="fa-solid fa-magnifying-glass icon"></i></li>
-                    <li class="cart"><i class="fa-solid fa-cart-shopping icon"></i></li>
+                    <li class="cart"><i class="fa-solid fa-cart-shopping icon"></i>
+                        <span>0</span>
+                    </li>
 
                 </ul>
                 <div id="bar" class="bar">

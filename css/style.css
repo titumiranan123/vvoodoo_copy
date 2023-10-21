@@ -12,6 +12,12 @@ body {
 }
 
 @import url("fonts/roboto/stylesheet.css");
+@import url(https://db.onlinewebfonts.com/c/33024f503b98e8c48e99476ac919ddd3?family=Sophisto+OT+W01+DGauge);
+
+li {
+    font-family: "Sophisto OT W01 DGauge";
+    font-size: 20px;
+}
 
 p {
     font-family: Roboto;
@@ -33,7 +39,41 @@ p {
     padding: 10px;
 }
 
+/* account navbar hover item  */
+.account-contents {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 150px;
+}
 
+.categories {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    font-family: Roboto, Arial, Helvetica;
+}
+
+.categories li:hover {
+    text-decoration: underline;
+}
+
+.cart {
+    border: 2px solid black;
+    padding: 10px;
+    position: relative;
+}
+
+.cart span {
+    position: absolute;
+    top: -4px;
+    right: 0px;
+    z-index: 10;
+
+}
 
 .menu {
     list-style: none;
@@ -64,12 +104,14 @@ p {
 
 .cart_area {
     display: flex;
-    gap: 10px;
+    gap: 30px;
 }
 
 .cart_area ul {
     list-style: none;
     display: flex;
+    gap: 30px;
+    align-items: center;
 }
 
 .cart_area ul a {
