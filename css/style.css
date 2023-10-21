@@ -8,8 +8,15 @@
 
 body {
     margin: 0 120px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
+@import url("fonts/roboto/stylesheet.css");
+
+p {
+    font-family: Roboto;
+
+}
 
 /* logo  */
 .logo img {
@@ -25,6 +32,8 @@ body {
     justify-content: space-between;
     padding: 10px;
 }
+
+
 
 .menu {
     list-style: none;
@@ -43,8 +52,6 @@ body {
     gap: 15px;
     transition: left 0.5s;
 }
-
-
 
 .menu-item {
     margin: 0 10px;
@@ -313,27 +320,27 @@ h1 {
 
 /* slider  */
 .card .img img {
-    width: 240px;
+    margin-top: 20px;
+    width: 250px;
     height: 240px;
     object-fit: cover;
-
 }
 
 iframe {
-    width: 560;
-    height: 315;
+    width: 560px;
+    height: 315px;
 }
 
 .wrapper .carousel {
     display: grid;
     grid-auto-flow: column;
     gap: 10px;
-    grid-auto-columns: calc((100% / 3) - 12px);
+    grid-auto-columns: calc((100% / 5) - 12px);
     overflow-x: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: 0;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .carousel .dragging .card {
@@ -348,8 +355,35 @@ iframe {
     border-radius: 10px;
 }
 
+/* fifth section  */
 
 
+.overly {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(7, 6, 6, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0%;
+    transition: opacity 0.3s;
+}
+
+.overly:hover {
+    opacity: 100%;
+}
+
+.overly i {
+    color: #fff;
+}
+
+.overly span {
+    color: #fff;
+}
 
 .footer {
     display: flex;
@@ -373,13 +407,49 @@ iframe {
     color: black;
 }
 
-.footer div {
+/* // pop up  */
+/* Styles for the centered page container */
+#centeredPage {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #4B4F58;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    z-index: 1;
+    /* Place the centered page above other content */
+}
+
+/* Hide the centered page by default */
+.display_hidden {
+    visibility: hidden
+}
+
+/* Styles for the page content */
+#pageContent {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    gap: 23px;
+}
+
+/* Button styles */
+.button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .text-sm {
@@ -405,100 +475,265 @@ iframe {
 .instagram_bar {
     display: flex;
     justify-content: space-between;
+    margin: 40px 0;
+}
+
+.fa-instagram {
+    font-size: 40px;
+}
+
+.instra_post {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+
+}
+
+.instra_post div img {
+    width: 200px;
+    height: 200px;
+}
+
+.instagram_bar div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instra_link:hover {
+    text-decoration: underline;
+}
+
+
+.footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4B4F58;
+    flex-direction: column;
+    gap: 8px;
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+
+/* Mobile styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
     body {
-        margin: 0 0px;
+        margin: 0 5px;
     }
 
     .menu {
         display: none;
     }
 
-    .search {
+    .bar {
+        display: block;
+    }
+
+    .hidden {
         display: none;
     }
 
-    iframe {
-        margin-top: 30px;
-        width: 100%;
-        height: 200px;
-    }
-
     h1 {
-        font-size: 30px;
+        font-size: 18px;
     }
 
-    .img-section {
-        width: 375px;
+    p {
+        font-size: 12px;
     }
 
-    .img-section img {
-        width: 375px;
-    }
-
-    .header-content {
-        width: 375px;
-    }
-
-    .bar {
-        display: flex;
-    }
-
-    .logo img {
-        height: 60px;
-        width: 150px;
-    }
-
+    /* header section */
     .header {
+        display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 40px;
+        margin-left: 0;
+        padding: 4px;
     }
 
-    .section-1 {
-        flex-direction: column;
-    }
-
-    iframe {
-        width: 100%;
-    }
-
-    .img-section {
-        width: 100%;
-    }
-
-    .header-content {
-        padding: 20px;
+    .header div {
         width: 100%;
     }
 
     .line {
-        width: 120px;
+        width: 120px !important;
     }
 
-    /* second seciton  */
+    .img-section img {
+        width: 400px;
+    }
+
+    /* main first section  */
+    .section-1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* second_section */
+
     .second_section {
         display: flex;
         flex-direction: column;
+        gap: 50px;
     }
 
     .second_section div {
         width: 100%;
     }
 
-    /* third section  */
-    .card_section {
+    .second_section div:nth-child(2) {
+        display: flex;
         flex-direction: column;
+        gap: 20px;
     }
 
-    h2 {
-        margin-bottom: 20px;
+    iframe {
+        width: 350px;
+        height: 375px;
+    }
+
+    /* third seciton  */
+    .card_section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* //slider */
+    .wrapper .carousel {
+
+        grid-auto-columns: calc((100% / 1) - 12px);
+
+    }
+
+    .card .img img {
+        width: 300px;
+        height: 300px;
     }
 
     /* fifth section  */
-    .products_tags {
-        margin-top: 40px;
+    .fifth_section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
+    .instra_post .showPageButton img {
+        width: 100%;
+    }
+
+    .instagram_bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .instra_post {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* last section  */
+    .products_tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+/* Tablet styles (min-width: 769px) to (max-width: 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    /* navbar  */
+    .menu {
+        display: none;
+    }
+
+    .bar {
+        display: block;
+    }
+
+    /* header section */
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-left: 0;
+        padding: 4px;
+    }
+
+    .header div {
+        width: 100%;
+    }
+
+    .line {
+        width: 120px !important;
+    }
+
+    .img-section img {
+        width: 100%;
+    }
+
+    /* second_section */
+
+    /* second_section */
+
+    .second_section {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .second_section div {
+        width: 100%;
+    }
+
+    .second_section div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 475px;
+    }
+
+    /* //slider */
+    .wrapper .carousel {
+
+        grid-auto-columns: calc((100% / 3) - 12px);
+
+    }
+
+    .card .img img {
+        width: 240px;
+        height: 300px;
+    }
+
+    .instra_post {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/* Desktop styles (min-width: 1025px) */
+@media screen and (min-width: 1025px) {
+    /* Add your desktop-specific styles here */
 }
